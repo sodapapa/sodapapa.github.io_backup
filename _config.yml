@@ -1,0 +1,28 @@
+title: DevLog
+description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
+
+url: https://sodapapa.github.io/
+baseurl: ""
+paginate_path: "blog/page:num/"
+permalink: blog/:title/
+
+markdown: kramdown
+highlighter: rouge
+plugins: [jekyll-paginate]
+paginate: 7
+
+navigation:
+  - title: Home
+    url: /index.html
+  - title: About
+    url: /about
+  - title: Contact
+    url: /contact
+
+social:
+  github: 415hdh
+  twitter: 415hdh
+  facebook: 415hdh
+  email: 415hdh@gmail.com
+
+google_analytics: "UA-58263416-1"
