@@ -1,6 +1,6 @@
 ---
 layout: post
-title: dycis-회원약관동의 좀더 쉽게 리팩토링 해볼것... 
+title: dycis-회원약관동의 좀더 쉽게 리팩토링 해볼것...
 ---
 ```
 public Map<String, Object> termAgree(String authToken, Integer userId, String termType) {
