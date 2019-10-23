@@ -1,6 +1,6 @@
 ---
 layout: post
-title: myBatis parameters #{} vs ${}
+title: myBatis parameters #{} vs ${}  번역
 ---
 https://mybatis.org/mybatis-3/sqlmap-xml.html#Parameters
 

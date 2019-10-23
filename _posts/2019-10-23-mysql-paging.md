@@ -1,6 +1,6 @@
 ---
 layout: post
-title: mysql limit paging
+title: mysql Limit ,Offset
 ---
 
 ## Limit
@@ -31,40 +31,32 @@ JQgrid 조회시 모두 이와 같은 쿼리를 사용하고 있는데, api에�
 
 *****
 
-## offest
+## Offest & Limit
+offset은 limit와 함께 사용해야한다.
 
+select * from tb_temp offset 5 와 같은 쿼리를 실행할 수는 없다.
+        
 Select  * from 테이블명 orders LIMIT 숫자(★);
 
 숫자만큼의 행 출력
 
 Ex) 10행 출력
-
 select * from member ORDERS LIMIT 10;
-
-
-
 Select * from 테이블명 orders LIMIT 숫자(★) OFFSET 숫자(♥);
 
 LIMIT 숫자 : 출력할 행의 수
+OFFSET 숫자 : 몇번째 row부터 출력할 지. (1번째 row면 0) 이갯수 만큼까고 리스트가 시작한다고 봄.
 
-OFFSET 숫자 : 몇번째 row부터 출력할 지. (1번째 row면 0)
 
 Ex) 10행씩 출력
-
 1페이지 : select * from member ORDERS LIMIT 10 OFFSET 0;
-
 2페이지 : select * from member ORDERS LIMIT 10 OFFSET 10;
-
-
 
 Select * from 테이블명 orders LIMIT 숫자1(♥), 숫자2(★);
 
-숫자1 : ♥번째 row부터 출력
-
-숫자2 : ★개의 행 출력
+숫자1 : ♥번째 row부터 출력 (시작위치)
+숫자2 : ★개의 행 출력 (몇개 뽑을지)
 
 Ex) 10행씩 출력
-
 1페이지 : select * from member ORDERS LIMIT 0, 10;
-
 2페이지 : select * from member ORDERS LIMIT 10, 10;

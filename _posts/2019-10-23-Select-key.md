@@ -1,6 +1,6 @@
 ---
 layout: post
-title: select key
+title: Mybatis Select Key
 ---
 insert 후에 AUTO_INCREMENT 로 생성된 pk 값을 가져오려고하는데
 service 단에서 아무리 로그를 찍어봐도 값이 1이 찍혀서 문제가 됨.
@@ -13,13 +13,9 @@ getKey()를 하니까 그안에 새로 생성된 pk의 값이 들어있었다..
 
 왜 쿼리를 리턴 받는 값에는 1이 찍히고 파라미터로 던진 vo에는 pk가 담겨 있는 지 모르겠음.
 
-
-
 ```
-
 @SelectKey(before = false,  keyProperty = "bcId", resultType = int.class, statement = ""
 			+ "SELECT LAST_INSERT_ID() as bcId" )
-
 
 @SelectKey(before = false,  keyProperty = "testId", resultType = int.class, statement = ""
 			+ "SELECT LAST_INSERT_ID() as testId" )
@@ -49,8 +45,8 @@ getKey()를 하니까 그안에 새로 생성된 pk의 값이 들어있었다..
 	int setComment(TnBillboardComment tnbillboardComment);
 ```
 
-
 keyProperty 값을 변경하니까 아래처럼 에러가 났다.
+keyProperty로 설정한 testId의 setter를 찾지 못해서 에러가 발생했다는 내용
 ```
 ERROR|2019-10-23 17:13:44,081|T100000002|com.ljsnc.api.exception.JaxRsExceptionMapper 36|Unmanaged Exception
 org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.executor.ExecutorException:
@@ -67,4 +63,8 @@ map 으로 던져도 정상적으로 key properties 값이 추가되어 반환�
 {bcId=21, bcContents=bcContents, regId=44, biId=4, modId=44}
 
 keyProperty 값의 setter 가 없으면 에러가 나는 VO보다는
-일단은 Map에 값을 넣어 주는게 좋은 것같다.
+일단은 Map에 값을 넣어 주는게 좋은 것 같다.
+
+****
+
+그럼 service 단의 변수에 담긴 1은 어디서 온 값일까? 쿼리의 결과값으로 insert update된 row의 갯수 인 것인가?
