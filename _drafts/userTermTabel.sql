@@ -47,3 +47,30 @@ CREATE TABLE `tn_user_term_agree` (
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+
+
+
+
+
+
+
+
+
+FieldTypeComment
+BI_IDint(11) NOT NULL게시물 ID
+BILLBOARD_IDint(11) NOT NULL게시판 ID
+BI_TITLEvarchar(11) NULL게시물 제목
+BI_CONTENTStext NULL게시물 내용
+P_BI_IDint(11) NULL게시물 ID(최상위)
+R_BI_IDint(11) NULL게시물 ID(상위)
+BI_DEPTHint(11) NULL답글순서
+NOTICE_YNchar(1) NULL공지여부
+DELETE_YNchar(1) NULL삭제여부
+PWD_VALUEvarchar(100) NULL게시물 비밀번호
+REG_TYPEvarchar(8) NULL등록자 구분(U:사용자, C:센터, M:관리자)
+REG_IDvarchar(11) NULL등록자 ID
+REG_DTdatetime NULL등록일시
+MOD_TYPEvarchar(8) NULL수정자 구분(U:사용자, C:센터, M:관리자)
+MOD_IDvarchar(11) NULL수정자 ID
+MOD_DTdatetime NULL수정일시
