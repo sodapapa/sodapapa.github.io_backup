@@ -20,11 +20,12 @@ limit  (3 - 1) * 10, 10
 
 현재 솔루션에서는 limit 의 첫번째  매개변수를 offset 처럼 사용하고 있다.
 
-`select * from tb_temp limit 20,30`
+``select * from tb_temp limit 20,30``
+
 
 JQgrid 조회시 모두 이와 같은 쿼리를 사용하고 있는데, api에서 페이징 처리를 하다 잘못 된것을 발견했다.
 
-`select * from tb_temp limit #{(pageNo - 1) * pageSize }, #{pageSize}`
+``select * from tb_temp limit #{(pageNo - 1) * pageSize }, #{pageSize}``
 
 이렇게 수정해야 정상적으로 조회가 된다.
 
