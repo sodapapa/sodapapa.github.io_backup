@@ -2,34 +2,35 @@
 layout: post
 title: mysql limit paging
 ---
-MySQL 에서는 다음과 같이 countPage = 10 일 때 3 페이지의 게시물을 가져올 수 있습니다.
 
+## Limit
+MySql의 Limit는 두 개의 매개 변수를 가진다.
+첫번째는 조회를 시작할 리스트의 위치,  두번째는 조회할 리스트의 수 이다.
+따라서 위의 코드는 20개 이후의 10개를 select하는 쿼이다.
 
 ```
 select id, name, content, createdate
 from board
 order by createdate
 limit  (3 - 1) * 10, 10
-```
+```   
 
-MySQL 의 LIMIT 은 두 개의 매개변수를 가지는데,
-
-첫번째 매개변수는 시작 위치, 두번째 매개변수는 가져올 게시물 수 입니다.
-
-그래서 20 이후의 게시물 10 개를 가져오게 됩니다.
-
-주의할 것은 매개변수를 1 개만 가질 수도 있는데, 이 때에는 통상적인 것처럼 첫번째 매개변수만 사용하는 것이 아니라 두번째 매개변수만 사용한다는 것입니다.
-
-
-그러므로 limit 10 이라고 하면 limit 0, 10 와 동일한 것이 된다는것.
+주의할 것은 매개변수를 하나만 가지는 경우다
+이때는 limit 10 이라고 하면 limit 0, 10 와 동일한 것이 된다는것.
 
 현재 솔루션에서는 limit 의 첫번째  매개변수를 offset 처럼 사용하고 있다.
 
 `select * from tb_temp limit 20,30`
 
-그리드 조회시 모두 이와 같은 쿼리를 사용하고 있는데 api에서 페이징 처리를 하다 잘못 된것을 발견했다.
+JQgrid 조회시 모두 이와 같은 쿼리를 사용하고 있는데, api에서 페이징 처리를 하다 잘못 된것을 발견했다.
 
+`select * from tb_temp limit #{(pageNo - 1) * pageSize }, #{pageSize}`
 
+이렇게 수정해야 정상적으로 조회가 된다.
+
+*****
+
+## offest
 
 Select  * from 테이블명 orders LIMIT 숫자(★);
 
