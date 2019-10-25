@@ -74,7 +74,7 @@ hr {
 pre {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 0.5em;
+  font-size: 0.7em;
   /* 2 */ }
 
 /* Text-level semantics
@@ -124,8 +124,8 @@ kbd,
 samp {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 1em;
-  /* 2 */ }
+  font-size: 0.7em;
+  /* 2 */ }   
 
 /**
  * Add the correct font style in Android 4.3-.
