@@ -444,8 +444,8 @@ th:last-child {
   overflow: auto;
   word-wrap: normal;
   border-radius: 3px;
-  padding: 20px;
-  background: #343642;
+  padding: 10px;
+  background: #343642;  
   color: #c1c2c3
 }
 
@@ -740,7 +740,7 @@ dd {
 }
 
 .post .highlight, .post img {
-  margin-bottom: 2rem
+  margin-bottom: 1rem
 }
 
 .post .highlight {
