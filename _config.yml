@@ -2,7 +2,7 @@ title: DevLog
 description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
 
 url: https://sodapapa.github.io/
-baseurl: ""
+baseurl: https://sodapapa.github.io/
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
 
