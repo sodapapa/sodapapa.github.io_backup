@@ -121,11 +121,11 @@ strong {
  */
 code,
 kbd,
-samp {
-  font-family: monospace, monospace;
+samp {          
+  font-family: Verdana;
   /* 1 */
   font-size: 0.7em;
-  /* 2 */ }   
+  /* 2 */ }
 
 /**
  * Add the correct font style in Android 4.3-.
