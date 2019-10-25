@@ -60,6 +60,7 @@ myBatis 에서 매개변수에 접근하여 값을 설정해주는것 같다.
 map 으로 던져도 정상적으로 key properties 값이 추가되어 반환된다.
 
 {bcContents=bcContents, regId=44, biId=4, modId=44}
+
 {bcId=21, bcContents=bcContents, regId=44, biId=4, modId=44}
 
 keyProperty 값의 setter 가 없으면 에러가 나는 VO보다는
