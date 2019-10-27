@@ -72,7 +72,7 @@ $   - 줄 끝
 
 야메노 타로   
 야메노 tarou  
-yameno 타로
+yameno 타로  
 yameno tarou  
 위 조건을 한번에 검색하는 예제
 
