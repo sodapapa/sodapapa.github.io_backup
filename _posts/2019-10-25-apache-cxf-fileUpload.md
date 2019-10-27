@@ -67,7 +67,7 @@ String getHanderValue = new String(buffer);
 				throw new ManagedException(ManagedExceptionCode.InvalidUser, CommonConstants.DEFAULT_FG_LANG);
 			}
 
-			if(body.getAttachment("billboardId") != null) {
+			if(body.getAttachment("billboardId") != null) {    
 //				billboardId	= body.getAttachment("billboardId").getDataHandler().getInputStream().toString();
 				Attachment att =  body.getAttachment("billboardId");
 				int avail = att.getDataHandler().getInputStream().available();
@@ -81,7 +81,7 @@ String getHanderValue = new String(buffer);
 
 				throw new ManagedException(ManagedExceptionCode.NotExistData, CommonConstants.DEFAULT_FG_LANG);
 			}
-
+5
 			if(body.getAttachment("biTitle") != null) {
 //				biTitle = body.getAttachment("biTitle").getDataHandler().getInputStream().toString();
 
