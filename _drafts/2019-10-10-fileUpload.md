@@ -68,7 +68,7 @@ body.getAttachment("biTitle").getDataHandler().getInputStream().toString();
 
 이 값들을 계속해서 메모리 주소값으로 불러오는 문제가 발생했다.
 
-결론은 toString() 메서드의 부정확? 불완전함 때문이었다.
+결론은 toString() 메서드의 부정확? 불완전함? 때문이었다.
 그래서 박차장님의 조언으로
 
 ```
