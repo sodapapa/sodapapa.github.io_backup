@@ -39,8 +39,8 @@ Mybatis 공식 홈페이지에서는 keyProperty를 여러개 받을 수 있다�
 
 [mybatis](https://mybatis.org/mybatis-3/ko/sqlmap-xml.html)
 
-|속성	|설명|    
-|:--------|:--------:|
+|속성	|설명   
+|:--------|--------|
 keyProperty |	selectKey구문의 결과가 셋팅될 대상 프로퍼티.
 keyColumn	|리턴되는 결과셋의 칼럼명은 프로퍼티에 일치한다. 여러개의 칼럼을 사용한다면 칼럼명의 목록은 콤마를 사용해서 구분한다.
 resultType |	결과의 타입. 마이바티스는 이 기능을 제거할 수 있지만 추가하는게 문제가 되지는 않을것이다. 마이바티스는 String을 포함하여 키로 사용될 수 있는 간단한 타입을 허용한다.

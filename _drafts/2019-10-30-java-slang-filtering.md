@@ -62,6 +62,45 @@ public class RegExTest06 {
     }
 }
 ```
+
+
+```
+public class BadWordCheckUtil {
+
+    public static String filterText(String sText, String badWordList) {
+
+        Pattern p = Pattern.compile(badWordList, Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(sText);
+        StringBuffer sb = new StringBuffer();
+
+        while (m.find()) {
+           // System.out.println(m.group());
+            m.appendReplacement(sb, maskWord(m.group()));
+        }
+
+        m.appendTail(sb);
+
+        //System.out.println(sb.toString());
+        return stripHTML(sb.toString());
+    }
+
+    public static String stripHTML(String htmlStr) {
+    	Pattern p = Pattern.compile("<(?:.|\\s)*?>");
+    	Matcher m = p.matcher(htmlStr);
+
+    	return m.replaceAll("");
+    }
+
+    public static String maskWord(String word) {
+        StringBuffer buff = new StringBuffer();
+        char[] ch = word.toCharArray();
+        for (int i = 0; i < ch.length; i++) {
+                buff.append("*");
+        }
+        return buff.toString();
+    }
+}
+```
 소스 출처: https://finewoo.tistory.com/archive/201009 [개발자 노트]
 
 ##### 여담  
