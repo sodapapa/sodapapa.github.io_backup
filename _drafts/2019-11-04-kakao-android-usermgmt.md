@@ -15,3 +15,4 @@ dependencies {
     implementation group: 'com.kakao.sdk', name: 'usermgmt', version: '1.1.0'
   }
 ```
+버전을 Gradle 지원 최소 버전으로 낮추고 다른 라이브러리의 버전을 변경햇는데 확인이 필요하다.
