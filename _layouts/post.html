@@ -14,10 +14,11 @@ layout: default
   {% if page.tags %}
     {% for tag in page.tags %}
       {% if site.data.tags contains tag %}
-        <span class="tag">{{ site.data.format[tag] }}</span>
+        <span class="tag">{{ tag }}</span>
       {% endif %}
     {% endfor %}
   {% endif %}
+
   {{ content }}
   <!-- POST NAVIGATION -->
   <div class="postNav clearfix">
