@@ -1107,7 +1107,7 @@ dd {
 @media only screen and (min-width:1200px) {
   body {
     font-size: 137.5%;
-    font-family: 'Nanum Gothic Coding'
+    font-family: 'Nanum Gothic Coding', serif;
   }
 
   .container {
