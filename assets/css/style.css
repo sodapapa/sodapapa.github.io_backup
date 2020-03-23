@@ -1,7 +1,7 @@
 /*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
 @import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic);
-
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo');
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -920,7 +920,8 @@ dd {
 
 @media only screen and (min-width:800px) {
   body {
-    font-size: 125%
+    font-size: 125%;
+    font-family: 'Nanum Myeongjo'
   }
 
   .content {
@@ -1035,7 +1036,7 @@ dd {
     width: 80%;
     float: none;
     margin: 0 auto 1.5rem
-  }         
+  }
 
   .post .h1, .post .h2, .post .h3, .post .h4, .post .h5, .post .h6, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
     margin: 1rem auto
@@ -1106,7 +1107,7 @@ dd {
 
 @media only screen and (min-width:1200px) {
   body {
-    font-size: 137.5%
+    font-size: 137.5%;    font-family: 'Nanum Myeongjo'
   }
 
   .container {
