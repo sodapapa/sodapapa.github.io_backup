@@ -3,4 +3,4 @@ frontend: FrontEnd
 blog: Blog
 jekyll: Jekyll
 ruby: Ruby
-weeklyReview : Weekly-Review
+'#'+주간회고 : Weekly-Review
