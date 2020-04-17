@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <div class="col-xs-12 no-padding margin-bottom-10">
+			<button type="button" class="btn btn-sm btn-primary margin-bottom-10" id="btn_add">이미지 추가</button><!-- 수정 -->
+		</div>
+		<ul id="drop" class="sortable_item_relation no-margin ui-sortable">
+
+		</ul>
+		<div class="">
+			<input id="fileInput" multiple="multiple"  type="file" style="display:none;">
+		</div>
+
+    <script type="text/javascript">
+      window.gallaryLen = 0;
+      window.uploadFiles = [];
+      window.uploadFilesLen = {
+        set number(val){
+          this._val = val;
+          if(this._val > 0){
+            $('#img-description').hide();
+          }else {
+            $('#img-description').show();
+          }
+        },
+        get number(){
+          return this._val || 0;
+        }
+      }
+
+      $('#fileInput').on('click', function(e){
+        this.value = null;
+      });
+
+      $('#fileInput').on('change', function(e){
+        console.log($(this)[0].files);
+        addFiles($(this)[0].files);
+      });
+
+
+      $('#drop').on("click", '.deleteBtn', function(e){
+        var $target = $(e.target);
+
+        var idx = $target.attr("data-idx");
+        uploadFiles[idx].upload = 'false'
+        uploadFilesLen.number--;
+
+        var ul = $target.parent().parent();
+
+        if(ul.children().length == 1){
+          $('#drop').empty();
+        }else {
+          $target.parent().parent().remove(); // 프리뷰 삭제
+        }
+
+      });
+
+      var $drop = $("#drop");
+
+      $("#btn_add").on('click', function(e){
+
+        $('#fileInput').trigger('click');
+      });
+
+      var addFiles = function(files){
+        if( gallaryLen + uploadFilesLen.number + files.length > 10 ){
+          bootbox.alert('10개만 등록가능합니다.');
+          return;
+        }
+
+        for(var i = 0; i < files.length; i++) {
+          var file = files[i];
+          if(!(file.type == 'image/png' || file.type == 'image/jpg' || file.type == 'image/jpeg' || file.type == 'image/gif')){
+            bootbox.alert('png, jpg, jpeg, gif 파일만 등록 가능합니다.');
+            return;
+          }
+
+          var size = uploadFiles.push(file);
+          ++uploadFilesLen.number;
+          preview(file, size-1);
+        }
+      };
+
+      var preview = function(file, idx) {
+        var reader = new FileReader();
+
+        reader.onload = (function(f, idx) {
+          return function(e) {
+
+            var div = ' <li id="card-img-'+ idx +'">'
+                      + ' 	<p class="image">'
+                      + ' 		<img src="'+e.target.result+'" title="'+ escape(f.name) +'" class="item_image size-100 none" alt="카드이미지" style="max-width: 100px;" >'
+                      + ' 	</p>'
+                      + ' 	<a href="#" class="deleteBtn delete_item_image">'
+                      + ' 		 <img src="/resources/css/img/icon_x.gif" alt=""  data-idx="'+ idx +'">'
+                      + ' 	 </a>'
+                      + ' </li>'
+                      + ' ';
+
+
+            $('#drop').append(div);
+          }
+        })(file, idx);
+        reader.readAsDataURL(file);
+      }
+
+
+      $('#btn_update').on("click", function(e){
+
+    		var formData = new FormData( );
+
+    		$.each(uploadFiles, function(i, file) {
+    			if(file.upload != 'disable') //삭제하지 않은 이미지만 업로드 항목으로 추가
+    			formData.append('upload-file', file, file.name); //모든 첨부파일은 upload-file 이름으로 전달함
+    		});
+
+    		formData.append("cardNm", 	$('#cardForm #cardNm').val());
+    		formData.append("cardSn", 	$('#cardForm #cardSn').val());
+
+     		$.ajax({
+     			url: '/product/card/update.json',
+     	        type : 'post',
+     	        data : formData,
+     	        enctype : 'multipart/form-data',
+     	        contentType : false,
+     	        cache : false,
+     	        processData : false,
+     			success: function(data){
+
+     				if(data.resultCode == 200 	&& data.resultData != null){
+
+    					bootbox.alert('수정되었습니다.',function(){
+    						cardModalDialog.dialog('close');
+    						$("#customerGrid").setGridParam({
+    							page: 1,
+    							postData:{
+    								countryNms : $('#searchForm #countryNms').val(),	//사용자명
+    								productDiv  : $('#searchForm #productDiv').val(),		//사용자명
+    								status		: $('#searchForm #status').val(),			//사용자명
+    								where		: $('#searchForm #where').val(),				//사용자명
+    								query			: $('#searchForm #query').val(),				//사용자명
+    							}
+    						}).trigger('reloadGrid');
+    					});
+
+     				}else {
+
+     				}
+     			}
+     		});
+    	})   
+
+
+    </script>
+
+
+  </body>
+
+
+</html>
