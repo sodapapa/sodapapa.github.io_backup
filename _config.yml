@@ -8,12 +8,12 @@ permalink: blog/:title/
 
 markdown: kramdown
 highlighter: rouge
-plugins: [jekyll-paginate]
+plugins: [jekyll-paginate, jekyll-sitemap, jekyll-include-cache, jekyll-gist]
 paginate: 7
 
 navigation:
   - title: Home
-    url: /index.html
+    url: /index.html    
   - title: About
     url: /about
   - title: Contact
