@@ -96,7 +96,22 @@ private Map<String, Object> uploadMultipleFiles(MultipartFile[] files, String fi
 
     return result;
 
+
+
+    LinkedMultiValueMap<String, Object> map = new LinkedMultiValueMap<>();
+    map.add("file", new ClassPathResource(file));
+    HttpHeaders headers = new HttpHeaders();
+    headers.setContentType(MediaType.MULTIPART_FORM_DATA);
+
+    HttpEntity<LinkedMultiValueMap<String, Object>> requestEntity = new    HttpEntity<LinkedMultiValueMap<String, Object>>(
+                        map, headers);
+    ResponseEntity<String> result = template.get().exchange(
+                        contextPath.get() + path, HttpMethod.POST, requestEntity,
+                        String.class);
+
+
 }
 
 
-//https://www.baeldung.com/spring-rest-template-multipart-upload
+// https://www.baeldung.com/spring-rest-template-multipart-upload
+// https://stackoverflow.com/questions/26964688/multipart-file-upload-using-spring-rest-template-spring-web-mvc
