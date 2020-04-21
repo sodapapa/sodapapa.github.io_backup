@@ -5,7 +5,7 @@ url: https://sodapapa.github.io
 baseurl: https://sodapapa.github.io
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
-
+disqus_shortname: 'sodapapa-github-io'
 markdown: kramdown
 highlighter: rouge
 plugins: [jekyll-paginate]
