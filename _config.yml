@@ -8,12 +8,12 @@ permalink: blog/:title/
 
 markdown: kramdown
 highlighter: rouge
-plugins: [jekyll-paginate]
+plugins: [jekyll-paginate, jekyll-sitemap, jekyll-include-cache, jekyll-gist]
 paginate: 7
 
 navigation:
   - title: Home
-    url: /index.html
+    url: /index.html    
   - title: About
     url: /about
   - title: Contact
@@ -25,4 +25,7 @@ social:
   facebook: 415hdh
   email: 415hdh@gmail.com
 
-google_analytics: "UA-58263416-1"
+google_analytics: "UA-164167126-1"
+
+disqus_shortname: 'sodapapa-github-io'
+disqus: sodapapa-github-io
