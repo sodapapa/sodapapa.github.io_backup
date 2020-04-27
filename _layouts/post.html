@@ -9,7 +9,7 @@ layout: default
   {% endif %}
   <h1 class="postTitle">{{ page.title }}</h1>
   <p class="meta">{{ page.date | date: '%B %d, %Y' }} | <span class="time">{{ page.content | number_of_words | divided_by:180 }}</span> Minute Read</p>
-
+    
 
   <!-- {% if page.toc %}
 <style>
@@ -33,20 +33,20 @@ layout: default
               <h4 class="">  {{ site.toc_title}} </h4>
           </div>
 
-            {% toc %} 
+            {% toc %}
         {% endif %}
       </nav>
 
     </aside>
   {% endif %} -->
 
-  {% if page.tags %}
+  <!-- {% if page.tags %}
     {% for tag in page.tags %}
       {% if site.data.tags contains tag %}
         <span class="meta">{{ tag }}</span>
       {% endif %}
     {% endfor %}
-  {% endif %}
+  {% endif %} -->
 
   {{ content }}
 
