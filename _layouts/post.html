@@ -10,6 +10,7 @@ layout: default
   <h1 class="postTitle">{{ page.title }}</h1>
   <p class="meta">{{ page.date | date: '%B %d, %Y' }} | <span class="time">{{ page.content | number_of_words | divided_by:180 }}</span> Minute Read</p>
 
+<!-- TOC  -->
 
 <style>
   .section-nav {
@@ -29,14 +30,18 @@ layout: default
       <nav class="">
 
           <div class="">
-
+            <i class="fa fa-file-alt"></i>
+              <h4 class="">  {{ site.toc_title}} </h4>
+              <h4 class="">  {{ site.title}} </h4>
           </div>
 
+            <!-- {% toc %} -->
 
       </nav>
 
     </aside>
 
+<!-- end TOC  -->
 
 <!-- tags  -->
   {% if page.tags %}
