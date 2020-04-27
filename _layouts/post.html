@@ -35,7 +35,7 @@ layout: default
               <h4 class="">  {{ site.title}} </h4>
           </div>
 
-            {% toc %}
+
 
       </nav>
 
@@ -52,7 +52,7 @@ layout: default
     {% endfor %}
   {% endif %}
 
-  {{ content }}
+  {{ content |toc}}
 
 
 
