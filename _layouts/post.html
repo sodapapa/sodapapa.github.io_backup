@@ -11,7 +11,7 @@ layout: default
   <p class="meta">{{ page.date | date: '%B %d, %Y' }} | <span class="time">{{ page.content | number_of_words | divided_by:180 }}</span> Minute Read</p>
 
 
-  {% if page.toc %}
+  <!-- {% if page.toc %}
 <style>
   .section-nav {
   background-color: #fff;
@@ -25,20 +25,20 @@ layout: default
   border-top : 1px dotted darkgrey;
 }
 </style>
-    <!-- <aside class=""> -->
-      <!-- <nav class="toc">
+    <aside class="">
+      <nav class="toc">
         {% if page.toc %}
           <div class="">
             <i class="fa fa-file-alt"></i>
               <h4 class="">  {{ site.toc_title}} </h4>
           </div>
 
-            <!-- {% toc %} -->
+            {% toc %} 
         {% endif %}
-      </nav> -->
+      </nav>
 
-    <!-- </aside> -->
-  {% endif %}
+    </aside>
+  {% endif %} -->
 
   {% if page.tags %}
     {% for tag in page.tags %}
