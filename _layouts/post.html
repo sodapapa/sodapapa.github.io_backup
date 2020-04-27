@@ -11,6 +11,35 @@ layout: default
   <p class="meta">{{ page.date | date: '%B %d, %Y' }} | <span class="time">{{ page.content | number_of_words | divided_by:180 }}</span> Minute Read</p>
 
 
+  {% if page.toc %}
+<style>
+  .section-nav {
+  background-color: #fff;
+  margin: 5px 0;
+  padding: 10px 30px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  list-style :none;
+}
+.section-nav hr{
+  border-top : 1px dotted darkgrey;
+}
+</style>
+    <!-- <aside class=""> -->
+      <nav class="toc">
+        {% if page.toc %}
+          <div class="">
+            <i class="fa fa-file-alt"></i>
+              <h4 class="">  {{ site.toc_title}} </h4>
+          </div>
+
+            {% toc %}
+        {% endif %}
+      </nav>
+
+    <!-- </aside> -->
+  {% endif %}
+
   {% if page.tags %}
     {% for tag in page.tags %}
       {% if site.data.tags contains tag %}
@@ -20,6 +49,9 @@ layout: default
   {% endif %}
 
   {{ content }}
+
+
+
   <!-- POST NAVIGATION -->
   <div class="postNav clearfix">
     {% if page.previous.url %}

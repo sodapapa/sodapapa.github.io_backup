@@ -117,7 +117,7 @@ strong {
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers. 
+ * 2. Correct the odd `em` font sizing in all browsers.
  */
 code,
 kbd,
@@ -1105,7 +1105,9 @@ POST STYLING
   .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post p, .post ul, .post ol, .post dl, .post .pageTitle {
     width: 75%;
     float: none;
-    margin: 0 auto 2rem; }
+    margin: 0 auto 2rem;
+  font-family:  'Nanum Myeongjo';
+  }
   .post h1, .post .h1, .post h2, .post .h2, .post h3, .post .h3, .post h4, .post .h4, .post h5, .post .h5, .post h6, .post .h6 {
     margin: 1rem auto; }
   .post .pageTitle {

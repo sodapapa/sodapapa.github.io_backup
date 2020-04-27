@@ -2,20 +2,25 @@ title: DevLog
 description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
 
 url: https://sodapapa.github.io
-baseurl: https://sodapapa.github.io
-paginate_path: "blog/page:num/"
-permalink: blog/:title/
+baseurl: '/myBlog'
+paginate_path: "page:num/"
+permalink: /:year/:month/:day/:title/
 
 markdown: kramdown
 highlighter: rouge
-plugins: [jekyll-paginate, jekyll-sitemap, jekyll-include-cache, jekyll-gist]
+plugins:
+  - jekyll-paginate
+  - jekyll-toc
+
 paginate: 7
 
 navigation:
   - title: Home
-    url: /index.html    
+    url: /index.html
+
   - title: About
     url: /about
+
   - title: Contact
     url: /contact
 
@@ -29,3 +34,7 @@ google_analytics: "UA-164167126-1"
 
 disqus_shortname: 'sodapapa-github-io'
 disqus: sodapapa-github-io
+
+
+
+toc_title: Table of contents on this page

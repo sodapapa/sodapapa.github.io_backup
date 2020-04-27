@@ -191,7 +191,7 @@ body .intro {
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   margin: .5rem 0 1.5rem;
-  font-family: Open Sans, Helvetica, Arial, sans-serif
+   font-family: 'Nanum Myeongjo'
 }
 
 .h1, h1 {
@@ -773,7 +773,7 @@ dd {
   height: 5rem;
   overflow: hidden;
   position: relative;
-  font-family: Open Sans, Helvetica, Arial, sans-serif;
+  font-family: 'Nanum Myeongjo';
   font-weight: 800;
   font-size: .9em;
   text-transform: uppercase;
@@ -1039,7 +1039,7 @@ dd {
   }
 
   .post .h1, .post .h2, .post .h3, .post .h4, .post .h5, .post .h6, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
-    margin: 1rem auto
+    margin: 3rem auto 1rem
   }
 
   .post .pageTitle {
@@ -1107,7 +1107,7 @@ dd {
 
 @media only screen and (min-width:1200px) {
   body {
-    font-size: 137.5%;    font-family: 'Nanum Myeongjo'
+    font-size: 120.5%;    font-family: 'Nanum Myeongjo'
   }
 
   .container {
