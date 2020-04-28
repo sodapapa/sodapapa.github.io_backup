@@ -3,14 +3,14 @@
   $.fn.toc = function(options) {
     var defaults = {
       noBackToTopLinks: false,
-      title: '<i>Jump to...</i>',
+      title: '<h4>Contents</h4>',
       minimumHeaders: 3,
       headers: 'h1, h2, h3, h4, h5, h6',
       listType: 'ol', // values: [ol|ul]
-      showEffect: 'show', // values: [show|slideDown|fadeIn|none]
-      showSpeed: 'slow', // set to 0 to deactivate effect
-      classes: { list: '',
-                 item: ''
+      showEffect: 'none', // values: [show|slideDown|fadeIn|none]
+      showSpeed: 0, // set to 0 to deactivate effect
+      classes: { list: 'test-list',
+                 item: 'test-item'
                }
     },
     settings = $.extend(defaults, options);

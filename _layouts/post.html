@@ -12,36 +12,8 @@ layout: default
 
 <!-- TOC  -->
 
-<style>
-  .section-nav {
-  background-color: #fff;
-  margin: 5px 0;
-  padding: 10px 30px;
-  border: 1px solid #e8e8e8;
-  border-radius: 3px;
-  list-style :none;
-  }
-  .section-nav hr{
-    border-top : 1px dotted darkgrey;
-  }
-</style>
+  <div id="toc"></div>
 
-    <aside class="">
-      <nav class="">
-
-          <div class="">
-            <i class="fa fa-file-alt"></i>
-              <h4 class="">  {{ site.toc_title}} </h4>
-              <h4 class="">  {{ site.title}} </h4>
-
-
-              <div id="toc"></div>
-          </div>
-
-
-      </nav>
-
-    </aside>
 
 <!-- end TOC  -->
 
@@ -53,7 +25,7 @@ layout: default
       {% endif %}
     {% endfor %}
   {% endif %}
-    
+
   {{ content }}
 
 
