@@ -33,8 +33,9 @@ layout: default
             <i class="fa fa-file-alt"></i>
               <h4 class="">  {{ site.toc_title}} </h4>
               <h4 class="">  {{ site.title}} </h4>
-              {{ toc}}
-              {{ toc_only }}
+
+
+              <div id="toc"></div>
           </div>
 
 
@@ -52,8 +53,8 @@ layout: default
       {% endif %}
     {% endfor %}
   {% endif %}
-
-  {{ content |toc}}
+    
+  {{ content }}
 
 
 
